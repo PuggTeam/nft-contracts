@@ -1,0 +1,58 @@
+{
+  "_from": "@rarible/royalties-upgradeable@0.7.2",
+  "_id": "@rarible/royalties-upgradeable@0.7.2",
+  "_inBundle": false,
+  "_integrity": "sha1-42UgDgma+inw+UyPnG3v4yMkkFg=",
+  "_location": "/@rarible/royalties-upgradeable",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@rarible/royalties-upgradeable@0.7.2",
+    "name": "@rarible/royalties-upgradeable",
+    "escapedName": "@rarible%2froyalties-upgradeable",
+    "scope": "@rarible",
+    "rawSpec": "0.7.2",
+    "saveSpec": null,
+    "fetchSpec": "0.7.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmmirror.com/@rarible/royalties-upgradeable/download/@rarible/royalties-upgradeable-0.7.2.tgz",
+  "_shasum": "e365200e099afa29f0f94c8f9c6defe323249058",
+  "_spec": "@rarible/royalties-upgradeable@0.7.2",
+  "_where": "D:\\Work\\solidity\\NFT\\medal-Dao_V2",
+  "access": "public",
+  "author": {
+    "name": "0v1se"
+  },
+  "bugs": {
+    "url": "https://github.com/rariblecom/protocol-contracts/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "3.4.0",
+    "@rarible/royalties": "^0.7.2"
+  },
+  "deprecated": false,
+  "description": "Solidity upgradeable abstract contracts for Rarible royalties",
+  "files": [
+    "contracts",
+    "readme.md"
+  ],
+  "gitHead": "d925393a23b35ba1529a3edba15ea23dcb25bb4e",
+  "homepage": "https://github.com/rariblecom/protocol-contracts/royalties-upgradeable#readme",
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "test"
+  ],
+  "license": "MIT",
+  "name": "@rarible/royalties-upgradeable",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rariblecom/protocol-contracts.git"
+  },
+  "version": "0.7.2"
+}

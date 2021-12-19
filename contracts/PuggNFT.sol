@@ -23,7 +23,13 @@ contract PuggNFT is IPuggNFT, ERC721Base {
     }
     uint256[50] private __gap;
 
-    mapping(string => Card) public        cardMap;        //cardType => Card
+    modifier onlyApprovedForAll() {
+        require(isApprovedForAll(owner(), _msgSender()), "caller is not approved");
+        _;
+    }
+
+    mapping(string => Card) public        cardMap;              //cardType => Card
+    mapping(uint => string) public        tokenIdCardTypeMap;   //tokenId => cardType
 
     function isCardExist (string memory cardtype) public view override returns(bool) {
         return cardMap[cardtype].existed;
@@ -37,29 +43,31 @@ contract PuggNFT is IPuggNFT, ERC721Base {
         require(cardMap[cardtype].existed, "card type does not exist");
         return cardMap[cardtype].points;
     }
-
-    function createCard(string memory cardtype, uint points) public override onlyOwner {
+    
+    function createCard(string memory cardtype, uint points) public override onlyApprovedForAll {
         require(!cardMap[cardtype].existed, "card type is already used");
         cardMap[cardtype] = Card(points, true, true);
-        emit CreateCard(_msgSender(), cardtype, points);
     }
 
-    function deleteCard(string memory cardtype, bool active) public override onlyOwner {
+    function deleteCard(string memory cardtype, bool active) public override onlyApprovedForAll {
         require(cardMap[cardtype].existed, "card type does not exist");
         Card storage info = cardMap[cardtype];
         info.active = active;
-        emit DeleteCard(_msgSender(), cardtype, active);
     }
 
-    function setCard(string memory cardtype, uint points) public override onlyOwner {
+    //Reset card type information
+    function setCard(string memory cardtype, uint points) public override onlyApprovedForAll {
         require(cardMap[cardtype].existed, "card id does not exist");
         Card storage info = cardMap[cardtype];
         info.points = points;
-        emit SetCard(_msgSender(), cardtype, points);
     }
 
-    function mintAndTransfer(LibERC721LazyMint.Mint721Data memory data, address to) public override {
-        require(isApprovedForAll(owner(), _msgSender()), "caller is not approved for all");
+    //After the sale, bind the card ID to the card type
+    function setTokenIdCardType(uint tokenId, string memory cartType) public override onlyApprovedForAll {
+        tokenIdCardTypeMap[tokenId] = cartType;
+    }
+
+    function mintAndTransfer(LibERC721LazyMint.Mint721Data memory data, address to) public override onlyApprovedForAll{
         super.mintAndTransfer(data, to);
     }
 

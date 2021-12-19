@@ -1,0 +1,61 @@
+{
+  "_from": "@rarible/lazy-mint@0.5.3",
+  "_id": "@rarible/lazy-mint@0.5.3",
+  "_inBundle": false,
+  "_integrity": "sha1-C3loxr71eIzEZ6XBwm7c4dgJL2Q=",
+  "_location": "/@rarible/lazy-mint",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@rarible/lazy-mint@0.5.3",
+    "name": "@rarible/lazy-mint",
+    "escapedName": "@rarible%2flazy-mint",
+    "scope": "@rarible",
+    "rawSpec": "0.5.3",
+    "saveSpec": null,
+    "fetchSpec": "0.5.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmmirror.com/@rarible/lazy-mint/download/@rarible/lazy-mint-0.5.3.tgz",
+  "_shasum": "0b7968c6bef5788cc467a5c1c26edce1d8092f64",
+  "_spec": "@rarible/lazy-mint@0.5.3",
+  "_where": "D:\\Work\\solidity\\NFT\\medal-Dao_V2",
+  "access": "public",
+  "author": {
+    "name": "0v1se"
+  },
+  "bugs": {
+    "url": "https://github.com/rariblecom/protocol-contracts/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "3.4.0",
+    "@rarible/royalties": "^0.7.2"
+  },
+  "deprecated": false,
+  "description": "Interfaces for ERC-721/1155 contracts with mintAndTransfer function",
+  "devDependencies": {
+    "@daonomic/tests-common": "0.2.2"
+  },
+  "files": [
+    "contracts",
+    "readme.md"
+  ],
+  "gitHead": "d925393a23b35ba1529a3edba15ea23dcb25bb4e",
+  "homepage": "https://github.com/rariblecom/protocol-contracts/mint-and-transfer#readme",
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "test"
+  ],
+  "license": "MIT",
+  "name": "@rarible/lazy-mint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rariblecom/protocol-contracts.git"
+  },
+  "version": "0.5.3"
+}

@@ -1,17 +1,14 @@
 pragma solidity ^0.7.6;
 pragma abicoder v2;
-import "@rarible/lazy-mint/contracts/erc-721/LibERC721LazyMint.sol";
+import "../../tokens/contracts/rarible/lazy-mint/contracts/erc-721/LibERC721LazyMint.sol";
 
 interface IPuggNFT {
 
     event CreatePuggNFT(address indexed operator, string name, string symbol);
-    event CreateCard(address indexed operator, string cardtype, uint points);
-    event DeleteCard(address indexed operator, string cardtype, bool active);
-    event SetCard(address indexed operator, string cardtype, uint points);
 
     
     struct Card {
-        uint        points;         //calit token
+        uint        points;         //The number of points pledged by the pool to go online
         bool        active;
         bool        existed;        //sign for create
     }
@@ -22,5 +19,6 @@ interface IPuggNFT {
     function createCard(string memory cardtype, uint points) external;
     function deleteCard(string memory cardtype, bool active) external;
     function setCard(string memory cardtype, uint points) external;
+    function setTokenIdCardType(uint tokenId, string memory cartType) external;
     function mintAndTransferSale(LibERC721LazyMint.Mint721Data memory data, address to) external;
 }

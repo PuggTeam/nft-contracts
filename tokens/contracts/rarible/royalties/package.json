@@ -1,0 +1,56 @@
+{
+  "_from": "@rarible/royalties@0.7.2",
+  "_id": "@rarible/royalties@0.7.2",
+  "_inBundle": false,
+  "_integrity": "sha1-aQr1jFJmxCzP0SJBVjaEDnSL8Bc=",
+  "_location": "/@rarible/royalties",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@rarible/royalties@0.7.2",
+    "name": "@rarible/royalties",
+    "escapedName": "@rarible%2froyalties",
+    "scope": "@rarible",
+    "rawSpec": "0.7.2",
+    "saveSpec": null,
+    "fetchSpec": "0.7.2"
+  },
+  "_requiredBy": [
+    "/",
+    "/@rarible/lazy-mint",
+    "/@rarible/royalties-upgradeable"
+  ],
+  "_resolved": "https://registry.npmmirror.com/@rarible/royalties/download/@rarible/royalties-0.7.2.tgz",
+  "_shasum": "690af58c5266c42ccfd122415636840e748bf017",
+  "_spec": "@rarible/royalties@0.7.2",
+  "_where": "D:\\Work\\solidity\\NFT\\medal-Dao_V2",
+  "access": "public",
+  "author": {
+    "name": "0v1se"
+  },
+  "bugs": {
+    "url": "https://github.com/rariblecom/protocol-contracts/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Solidity interfaces to support royalties  on Rarible",
+  "files": [
+    "contracts",
+    "readme.md"
+  ],
+  "gitHead": "d925393a23b35ba1529a3edba15ea23dcb25bb4e",
+  "homepage": "https://github.com/rariblecom/protocol-contracts/royalties#readme",
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "test"
+  ],
+  "license": "MIT",
+  "name": "@rarible/royalties",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rariblecom/protocol-contracts.git"
+  },
+  "version": "0.7.2"
+}
