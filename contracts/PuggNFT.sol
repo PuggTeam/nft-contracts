@@ -44,13 +44,18 @@ contract PuggNFT is IPuggNFT, ERC721Base {
         return cardMap[cardtype].points;
     }
 
+    function getCardURI (string memory cardtype) public view override returns(string memory) {
+        require(cardMap[cardtype].existed, "card type does not exist");
+        return cardMap[cardtype].cardURI;
+    }
+
     function setTokenURI(uint256 tokenId, string memory _tokenURI) public override onlyApprovedForAll {
         super._setTokenURI(tokenId, _tokenURI);
     }
     
-    function createCard(string memory cardtype, uint points) public override onlyApprovedForAll {
+    function createCard(string memory cardtype, uint points, string memory cardURI) public override onlyApprovedForAll {
         require(!cardMap[cardtype].existed, "card type is already used");
-        cardMap[cardtype] = Card(points, true, true);
+        cardMap[cardtype] = Card(points, cardURI, true, true);
     }
 
     function deleteCard(string memory cardtype, bool active) public override onlyApprovedForAll {
@@ -60,10 +65,11 @@ contract PuggNFT is IPuggNFT, ERC721Base {
     }
 
     //Reset card type information
-    function setCard(string memory cardtype, uint points) public override onlyApprovedForAll {
+    function setCard(string memory cardtype, uint points, string memory cardURI) public override onlyApprovedForAll {
         require(cardMap[cardtype].existed, "card id does not exist");
         Card storage info = cardMap[cardtype];
         info.points = points;
+        info.cardURI = cardURI;
     }
 
     //After the sale, bind the card ID to the card type

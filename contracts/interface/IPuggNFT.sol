@@ -19,6 +19,7 @@ interface IPuggNFT {
     
     struct Card {
         uint        points;         //The number of points pledged by the pool to go online
+        string      cardURI;        //the URL of card
         bool        active;
         bool        existed;        //sign for create
     }
@@ -26,10 +27,11 @@ interface IPuggNFT {
     function isCardExist(string memory cardtype) external view returns(bool);
     function isCardActive(string memory cardtype) external view returns(bool);
     function getCardPoints(string memory cardtype) external view returns(uint);
+    function getCardURI(string memory cardtype) external view returns(string memory);
     function setTokenURI(uint256 tokenId, string memory _tokenURI) external;
-    function createCard(string memory cardtype, uint points) external;
+    function createCard(string memory cardtype, uint points, string memory cardURI) external;
     function deleteCard(string memory cardtype, bool active) external;
-    function setCard(string memory cardtype, uint points) external;
+    function setCard(string memory cardtype, uint points, string memory cardURI) external;
     function setTokenIdCardType(uint tokenId, string memory cartType) external;
     function mintAndTransferSale(LibERC721LazyMint.Mint721Data memory data, address to) external;
 }
