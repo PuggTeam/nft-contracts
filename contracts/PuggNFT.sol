@@ -43,6 +43,10 @@ contract PuggNFT is IPuggNFT, ERC721Base {
         require(cardMap[cardtype].existed, "card type does not exist");
         return cardMap[cardtype].points;
     }
+
+    function setTokenURI(uint256 tokenId, string memory _tokenURI) public override onlyApprovedForAll {
+        super._setTokenURI(tokenId, _tokenURI);
+    }
     
     function createCard(string memory cardtype, uint points) public override onlyApprovedForAll {
         require(!cardMap[cardtype].existed, "card type is already used");
