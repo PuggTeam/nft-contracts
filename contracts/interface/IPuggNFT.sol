@@ -1,16 +1,6 @@
 pragma solidity ^0.7.6;
 pragma abicoder v2;
-import "../../tokens/contracts/rarible/lazy-mint/contracts/erc-721/LibERC721LazyMint.sol";
-
-
-/*
-test tokenByIndex
-use diff accounts test onlyApprovedForAll function
-tested setCard
-tested setTokenIdCardType
-tested auth for all function
-tested mintAndTransferSale with error tokenId
-*/
+import "../../lazy-mint/contracts/erc-721/LibERC721LazyMint.sol";
 
 interface IPuggNFT {
 
