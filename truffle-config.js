@@ -80,7 +80,16 @@
       skipDryRun: false,     // Skip dry run before migrations? (default: false for public nets )
       websocket: true
      },
-
+     bsc_main: {
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY_MAIN, 'https://bsc-dataseed.binance.org/'),
+      network_id: 56,       // Ropsten's id
+      // gas: 8000000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 0,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 100000000,  // # of blocks before a deployment times out  (minimum/default: 50)
+      networkCheckTimeout: 500000000,
+      skipDryRun: false,     // Skip dry run before migrations? (default: false for public nets )
+      websocket: true
+     },
      bsc_test: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://data-seed-prebsc-1-s1.binance.org:8545/'),
       network_id: 97,       // Ropsten's id
